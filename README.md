@@ -1,4 +1,3 @@
-# iluxaxa666
 # Подсистема учета донорства и запасов крови медицинского центра
 
 ## Концепция системы
@@ -42,3 +41,66 @@ blood-donation-system/
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
+```
+
+## Схема базы данных (основные таблицы)
+- **donors** — доноры (id, ФИО, дата рождения, группа крови, резус-фактор, контакты)
+- **donations** — донации (id, donor_id, дата, тип компонента, объем)
+- **blood_stock** — запасы (id, группа крови, резус-фактор, компонент, количество)
+- **requests** — заявки от отделений (id, отделение, группа крови, объем, статус)
+- **users** — пользователи системы (id, логин, пароль-хэш, роль)
+
+## Инструкции по развертыванию
+
+### Требования
+- Node.js (версия 18+)
+- PostgreSQL (версия 14+)
+- npm или yarn
+
+### Установка и запуск
+
+1. Клонировать репозиторий:
+   ```bash
+   git clone https://github.com/wotblitznegativ-code/iluxaxaxaxa.git
+   cd iluxaxaxaxa
+   ```
+
+2. Установить зависимости бэкенда:
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. Установить зависимости фронтенда:
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+4. Скопировать `.env.example` в `.env` и заполнить своими данными:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Создать базу данных в PostgreSQL и применить миграции:
+   ```bash
+   cd ../server
+   npx sequelize-cli db:create
+   npx sequelize-cli db:migrate
+   ```
+
+6. Запустить бэкенд:
+   ```bash
+   npm run dev
+   ```
+
+7. Запустить фронтенд (в новом терминале):
+   ```bash
+   cd ../client
+   npm start
+   ```
+
+8. Открыть в браузере: `http://localhost:3000`
+
+## Автор
+wotblitznegativ-code

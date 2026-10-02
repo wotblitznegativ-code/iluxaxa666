@@ -62,7 +62,7 @@ blood-donation-system/
 
 1. Клонировать репозиторий:
    ```bash
-   git clone https://github.com/wotblitznegativ-code/iluxaxaxaxa.git
+   git clone https://github.com/wotblitznegativ-code/iluxaxa666.git
    cd iluxaxaxaxa
    ```
 
